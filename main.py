@@ -41,6 +41,23 @@ def run_app():
 def run_test_mode():
     print("Container test mode: app imported successfully")
 
+    try:
+        from kivy.app import App
+        from kivy.uix.screenmanager import ScreenManager
+        print("Kivy core imports OK")
+
+        from db_utils import init_db
+        print("DB module OK")
+
+        from screens.home_screen import HomeScreen
+        from screens.add_item_screen import AddItemScreen
+        print("Screen imports OK")
+
+        print("All core modules imported successfully")
+
+    except Exception as e:
+        print("IMPORT FAILURE:", e)
+        raise
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "test":

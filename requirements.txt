@@ -10,3 +10,4 @@ certifi==2026.5.20
 charset-normalizer==3.4.7
 urllib3==2.6.3
 Kivy-Garden==0.1.5
+pytest==8.4.0

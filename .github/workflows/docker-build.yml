@@ -19,3 +19,11 @@ jobs:
 
       - name: Build Docker Image
         run: docker build -t kitchen-app .
+
+      - name: Run tests inside container
+        run: |
+          docker run --rm kitchen-app pytest -q
+
+      - name: Validate app runtime
+        run: |
+          docker run --rm kitchen-app python main.py test
