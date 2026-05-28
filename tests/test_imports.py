@@ -6,5 +6,5 @@ def test_kivy_import():
 
 
 def test_app_modules_import():
-    import main
-    assert hasattr(main, "KitchenApp")
+    from main import KitchenApp
+    assert hasattr(KitchenApp, "KitchenApp")
