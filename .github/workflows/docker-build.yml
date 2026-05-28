@@ -22,7 +22,7 @@ jobs:
 
       - name: Run tests inside container
         run: |
-          docker run --rm kitchen-app pytest -q
+          docker run --rm -w /app kitchen-app pytest -q
 
       - name: Validate app runtime
         run: |
