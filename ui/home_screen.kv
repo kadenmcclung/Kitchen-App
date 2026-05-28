@@ -1,0 +1,50 @@
+<HomeScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(20)
+        spacing: dp(20)
+
+        Label:
+            text: "Kitchen App"
+            font_size: dp(24)
+            size_hint_y: None
+            height: dp(40)
+
+        ScrollView:
+            do_scroll_y: True
+            GridLayout:
+                cols: 2
+                spacing: dp(20)
+                padding: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
+
+                Button:
+                    text: "Add Item"
+                    size_hint_y: None
+                    height: dp(120)
+                    on_press: root.manager.current = 'add_item'
+
+                Button:
+                    text: "View Inventory"
+                    size_hint_y: None
+                    height: dp(120)
+                    on_press: root.manager.current = 'inventory'
+
+                Button:
+                    text: 'Shopping List'
+                    size_hint_y: None
+                    height: dp(120)
+                    on_press: app.root.current = 'shopping_list'
+
+                Button:
+                    text: 'Templates'
+                    size_hint_y: None
+                    height: dp(120)
+                    on_press: app.root.current = 'templates'
+
+                Button:
+                    text: 'Recipes'
+                    size_hint_y: None
+                    height: dp(120)
+                    on_press: app.root.current = 'recipes'

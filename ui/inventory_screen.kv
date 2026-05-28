@@ -1,0 +1,99 @@
+<InventoryScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(10)
+        spacing: dp(10)
+
+        BoxLayout:
+            size_hint_y: None
+            height: dp(50)
+            spacing: dp(10)
+
+            Button:
+                text: "< Back"
+                size_hint_x: None
+                width: dp(100)
+                on_press: root.manager.current = 'home'
+
+            Label:
+                text: "Inventory"
+                font_size: dp(20)
+                halign: 'left'
+
+        BoxLayout:
+            size_hint_y: None
+            height: dp(40)
+            spacing: dp(10)
+
+            TextInput:
+                id: search_input
+                hint_text: "Search by name..."
+
+            TextInput:
+                id: category_filter
+                hint_text: "Filter by category..."
+
+            Button:
+                text: "Apply"
+                on_press: root.apply_filters()
+
+        BoxLayout:
+            size_hint_y: None
+            height: dp(40)
+            spacing: dp(10)
+
+            Button:
+                text: "Show Expiring Soon"
+                on_press: root.show_expiring_soon()
+
+            Button:
+                text: "Show All"
+                on_press: root.populate_items()
+
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+
+            BoxLayout:
+                id: item_list
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+
+<ItemRow@BoxLayout>:
+    name: ''
+    quantity: ''
+    expiration: ''
+    date_entered: ''
+    category: ''
+    size_hint_y: None
+    height: dp(40)
+    spacing: dp(10)
+
+    Label:
+        text: f"{root.name} ({root.quantity}) - {root.expiration} - {root.date_entered} - {root.category}"
+        size_hint_x: 0.6
+        text_size: self.size
+        halign: 'left'
+        valign: 'middle'
+        shorten: True
+        shorten_from: 'right'
+
+    Button:
+        text: "Edit"
+        size_hint_x: None
+        width: dp(80)
+        on_press: app.root.get_screen('home').open_edit_popup((root.name, root.quantity, root.expiration, root.date_entered, root.category))
+
+    Widget:
+        size_hint_x: None
+        width: dp(10)
+
+    Button:
+        text: "Delete"
+        size_hint_x: None
+        width: dp(80)
+        on_press: app.root.get_screen('home').delete_and_refresh(root.name)
+
+
+

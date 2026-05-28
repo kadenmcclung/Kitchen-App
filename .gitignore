@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env
+
+# IDE
+.idea/
+
+# Database
+db/*.db
+
+# Build artifacts
+build/
+dist/
+
+# Docker / local env
+requirements-dev.txt
+
+# OS
+.DS_Store
+Thumbs.db

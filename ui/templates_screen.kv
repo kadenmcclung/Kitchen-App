@@ -1,0 +1,35 @@
+<TemplatesScreen>:
+    name: 'templates'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(10)
+        spacing: dp(10)
+
+        ScrollView:
+            id: templates_scrollview
+            do_scroll_x: False
+            do_scroll_y: True
+            bar_width: dp(10)
+
+            GridLayout:
+                id: templates_container
+                cols: 1
+                spacing: dp(10)
+                padding: dp(5)
+                size_hint_y: None
+                height: self.minimum_height
+
+        BoxLayout:
+            size_hint_y: None
+            height: dp(50)
+            spacing: dp(10)
+
+            Button:
+                text: "Add Template Item"
+                on_press: root.open_add_template_popup()
+
+            Button:
+                text: "Back"
+                on_press: root.manager.current = 'home'
+
+

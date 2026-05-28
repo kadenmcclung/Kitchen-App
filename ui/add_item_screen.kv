@@ -1,0 +1,67 @@
+<AddItemScreen>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: dp(20)
+            spacing: dp(15)
+            size_hint_y: None
+            height: self.minimum_height
+
+            Label:
+                text: "Add Item"
+                font_size: dp(24)
+                size_hint_y: None
+                height: dp(40)
+
+            TextInput:
+                id: name_input
+                hint_text: "Item name"
+                size_hint_y: None
+                height: dp(48)
+                multiline: False
+
+            TextInput:
+                id: quantity_input
+                hint_text: "Quantity"
+                size_hint_y: None
+                height: dp(48)
+                multiline: False
+
+            TextInput:
+                id: expiration_input
+                hint_text: "Expiration (MM-DD-YYYY)"
+                size_hint_y: None
+                height: dp(48)
+                multiline: False
+
+            TextInput:
+                id: date_entered_input
+                hint_text: "Date Entered (MM-DD-YYYY)"
+                size_hint_y: None
+                height: dp(48)
+                multiline: False
+
+            TextInput:
+                id: category_input
+                hint_text: "Category (e.g., Pantry, Fridge)"
+                size_hint_y: None
+                height: dp(48)
+                multiline: False
+
+            BoxLayout:
+                size_hint_y: None
+                height: dp(60)
+                spacing: dp(10)
+
+                Button:
+                    text: "Add Item"
+                    size_hint_x: 0.5
+                    on_press: root.add_item()
+
+                Button:
+                    text: "Cancel"
+                    size_hint_x: 0.5
+                    on_press: root.cancel()

@@ -1,0 +1,41 @@
+<ShoppingListScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(10)
+        spacing: dp(10)
+
+        BoxLayout:
+            size_hint_y: None
+            height: dp(50)
+            spacing: dp(10)
+
+            Button:
+                text: "< Back"
+                size_hint_x: None
+                width: dp(100)
+                on_press: root.manager.current = 'home'
+
+            Label:
+                text: 'Shopping List'
+                font_size: dp(20)
+                halign: 'left'
+
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+
+            BoxLayout:
+                id: shopping_list_container
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+
+        BoxLayout:
+            size_hint_y: None
+            height: dp(50)
+            spacing: dp(10)
+
+            Button:
+                text: 'Add Item'
+                on_press: root.open_add_popup()
+
