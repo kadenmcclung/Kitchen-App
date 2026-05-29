@@ -34,6 +34,16 @@ jobs:
           path: .buildozer
           key: buildozer-${{ runner.os }}
 
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Accept Android SDK licenses
+        run: yes | sdkmanager --licenses || true
+
+      - name: Install Android build-tools
+        run: |
+          yes | sdkmanager "build-tools;34.0.0"
+
       - name: Build APK
         run: |
           buildozer android debug
