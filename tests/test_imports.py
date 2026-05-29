@@ -7,4 +7,4 @@ def test_kivy_import():
 
 def test_app_modules_import():
     import main
-    assert hasattr(main, "KitchenApp")
+    main.run_test_mode()
