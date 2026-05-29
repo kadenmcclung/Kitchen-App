@@ -17,11 +17,16 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y \
-            python3-pip \
             git \
             zip \
             unzip \
-            openjdk-17-jdk
+            openjdk-17-jdk \
+            python3-pip \
+            autoconf \
+            automake \
+            libtool \
+            m4 \
+            pkg-config
 
       - name: Install Buildozer
         run: |
