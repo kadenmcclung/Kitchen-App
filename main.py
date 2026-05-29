@@ -1,18 +1,19 @@
 from kivy.app import App
-from kivy.lang import Builder
-from kivy.uix.screenmanager import ScreenManager
 from db_utils import init_db
-from screens.home_screen import HomeScreen
-from screens.add_item_screen import AddItemScreen
-from screens.inventory_screen import InventoryScreen
-from screens.shopping_list_screen import ShoppingListScreen
-from screens.templates_screen import TemplatesScreen
-from screens.recipes_screen import RecipesScreen
 import sys
 
 
 class KitchenApp(App):
     def build(self):
+        from kivy.lang import Builder
+        from kivy.uix.screenmanager import ScreenManager
+        from screens.home_screen import HomeScreen
+        from screens.add_item_screen import AddItemScreen
+        from screens.inventory_screen import InventoryScreen
+        from screens.shopping_list_screen import ShoppingListScreen
+        from screens.templates_screen import TemplatesScreen
+        from screens.recipes_screen import RecipesScreen
+
         init_db()
 
         Builder.load_file('ui/home_screen.kv')
