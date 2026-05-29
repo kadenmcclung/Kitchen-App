@@ -6,6 +6,7 @@ ENV PYTHONUNBUFFERED=1
 
 # Working directory inside container
 WORKDIR /app
+ENV PYTHONPATH=/app
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
