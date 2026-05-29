@@ -26,5 +26,9 @@ COPY . .
 # Create db directory inside container
 RUN mkdir -p db
 
+# Run Headless
+ENV KIVY_WINDOW=mock
+ENV KIVY_NO_ARGS=1
+
 # App entrypoint
 CMD ["python", "main.py", "test"]
