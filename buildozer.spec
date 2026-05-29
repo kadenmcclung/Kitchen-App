@@ -28,9 +28,6 @@ orientation = portrait
 # (bool) Fullscreen mode
 fullscreen = 1
 
-# (str) Supported orientations
-orientation = portrait
-
 # (list) Permissions
 android.permissions = INTERNET
 
