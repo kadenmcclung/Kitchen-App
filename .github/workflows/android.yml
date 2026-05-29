@@ -22,16 +22,17 @@ jobs:
             unzip \
             openjdk-17-jdk \
             python3-pip \
-            autoconf \
-            automake \
-            libtool \
-            m4 \
-            pkg-config
+            build-essential \
+            autoconf automake libtool libtool-bin m4 pkg-config cmake
+
+      - name: Fix autotools
+        run: |
+          libtoolize --force --copy
 
       - name: Install Buildozer
         run: |
           pip install --upgrade pip
-          pip install buildozer cython
+          pip install buildozer==1.5.0 cython==0.29.36
 
       - name: Cache Buildozer
         uses: actions/cache@v4
