@@ -25,6 +25,8 @@ jobs:
             build-essential \
             autoconf \
             automake \
+            autoconf-archive \
+            gettext \
             libtool \
             libtool-bin \
             m4 \
