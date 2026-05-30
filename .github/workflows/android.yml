@@ -13,52 +13,40 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install system deps
+      - name: Install system dependencies
         run: |
           sudo apt update
           sudo apt install -y \
-            git \
-            zip \
-            unzip \
+            git zip unzip \
             openjdk-17-jdk \
             python3-pip \
             build-essential \
-            autoconf \
-            automake \
-            autoconf-archive \
-            gettext \
-            gperf \
-            libtool \
-            libtool-bin \
-            libltdl-dev \
-            m4 \
-            pkg-config \
+            autoconf automake libtool pkg-config \
             cmake \
+            libffi-dev libssl-dev \
             zlib1g-dev \
-            libncurses5-dev \
-            libncursesw5-dev \
-            libffi-dev \
-            libssl-dev
+            libncurses-dev \
+            libsqlite3-dev
 
-      - name: Fix autotools
+      - name: Upgrade pip
         run: |
-          libtoolize --force --copy
+          pip install --upgrade pip setuptools wheel
 
-      - name: Install Buildozer
+      - name: Install Buildozer + stable toolchain
         run: |
-          pip install --upgrade pip
-          pip install buildozer==1.5.0 cython==0.29.36 python-for-android==2023.9.16
+          pip install buildozer==1.5.0
+          pip install cython==0.29.36
+          pip install python-for-android==2023.10.14
 
       - name: Clean Buildozer cache
         run: |
-          rm -rf .buildozer
-          rm -rf ~/.buildozer
+          rm -rf .buildozer ~/.buildozer
 
       - name: Build APK
         run: |
-          yes | buildozer -v android debug
+          buildozer android debug
 
-      - name: Upload to GitHub Release
+      - name: Upload APK
         uses: softprops/action-gh-release@v2
         with:
           files: bin/*.apk
