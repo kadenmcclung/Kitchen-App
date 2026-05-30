@@ -49,6 +49,11 @@ jobs:
           pip install --upgrade pip
           pip install buildozer==1.5.0 cython==0.29.36 python-for-android==2024.1.21
 
+      - name: Clean Buildozer cache
+        run: |
+          rm -rf .buildozer
+          rm -rf ~/.buildozer
+
       - name: Install Android SDK cmdline-tools
         run: |
           mkdir -p $HOME/android-sdk
