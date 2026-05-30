@@ -27,6 +27,7 @@ jobs:
             automake \
             autoconf-archive \
             gettext \
+            gperf \
             libtool \
             libtool-bin \
             libltdl-dev \
