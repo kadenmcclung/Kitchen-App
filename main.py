@@ -40,7 +40,18 @@ def run_app():
 
 
 def run_test_mode():
-    print("Container test mode OK")
+    try:
+        from db_utils import init_db
+        init_db()
+
+        print("DB init OK")
+        print("Core imports OK")
+
+        return 0
+
+    except Exception as e:
+        print(f"FAIL: {e}")
+        return 1
 
 
 if __name__ == '__main__':
