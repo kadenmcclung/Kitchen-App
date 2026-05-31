@@ -103,7 +103,6 @@ android.permissions = android.permission.INTERNET, (name=android.permission.WRIT
 # (int) Target Android API, should be as high as possible.
 android.api = 33
 android.build_tools_version = 34.0.0
-android.bootstrap = sdl2
 
 # (int) Minimum API your APK / AAB will support.
 android.minapi = 21
@@ -339,7 +338,7 @@ p4a.python_version = 3.11
 #p4a.hook =
 
 # (str) Bootstrap to use for android builds
-# p4a.bootstrap = sdl2
+p4a.bootstrap = sdl2
 
 # (int) port number to specify an explicit --port= p4a argument (eg for bootstrap flask)
 #p4a.port =

@@ -49,7 +49,7 @@ jobs:
         run: |
           pip install buildozer==1.5.0
           pip install cython==0.29.36
-          pip install python-for-android==2023.9.16
+          pip install python-for-android==2024.1.21
 
       - name: Clean Buildozer cache
         run: |
