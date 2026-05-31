@@ -47,9 +47,7 @@ jobs:
 
       - name: Install Buildozer + stable toolchain
         run: |
-          pip install buildozer==1.5.0
-          pip install cython==0.29.36
-          pip install python-for-android==2024.1.21
+          pip install buildozer
 
       - name: Clean caches
         run: |
