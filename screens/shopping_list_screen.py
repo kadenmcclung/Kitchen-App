@@ -1,5 +1,3 @@
-# screens/shopping_list_screen.py
-
 from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
 from kivy.uix.boxlayout import BoxLayout

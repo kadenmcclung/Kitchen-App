@@ -4,10 +4,10 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 from kivy.uix.popup import Popup
-from kivy.clock import Clock  # <-- Added
+from kivy.clock import Clock
 from datetime import datetime
 
-from db_utils import fetch_items, delete_item, update_item  # Only fetch, delete, update
+from db_utils import fetch_items, delete_item, update_item
 
 
 def format_date(date_str):
@@ -24,7 +24,7 @@ def unformat_date(date_str):
         try:
             return datetime.strptime(date_str, '%m-%d-%Y').strftime('%Y-%m-%d')
         except ValueError:
-            return None  # or return "" depending on your DB expectations
+            return None
     return None
 
 

@@ -1,11 +1,9 @@
-# screens/inventory_screen.py
-
 from kivy.uix.screenmanager import Screen
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.clock import Clock
 from db_utils import fetch_items, delete_item
-from screens.home_screen import EditPopup  # Reuse existing popup
+from screens.home_screen import EditPopup
 from datetime import datetime
 
 from db_utils import (
@@ -27,7 +25,7 @@ def unformat_date(date_str):
         try:
             return datetime.strptime(date_str, '%m-%d-%Y').strftime('%Y-%m-%d')
         except ValueError:
-            return None  # or return "" depending on your DB expectations
+            return None
     return None
 
 
@@ -43,7 +41,6 @@ class InventoryScreen(Screen):
 
         items = fetch_items()
 
-        # Apply filtering if any
         if filters:
             if filters.get("category"):
                 items = [i for i in items if i[4].lower() == filters["category"].lower()]

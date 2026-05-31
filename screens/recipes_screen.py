@@ -54,7 +54,7 @@ class RecipesScreen(Screen):
             del_btn.bind(on_press=lambda _, rid=recipe_id: self.remove_recipe(rid))
             button_row.add_widget(del_btn)
 
-            add_all_btn = Button(text='Add All to List', size_hint_x=None, width=dp(120))  # Slightly smaller width
+            add_all_btn = Button(text='Add All to List', size_hint_x=None, width=dp(120))
             add_all_btn.bind(on_press=lambda _, rid=recipe_id: self.add_all_to_shopping_list(rid))
             button_row.add_widget(add_all_btn)
 

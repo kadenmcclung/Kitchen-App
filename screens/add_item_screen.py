@@ -39,7 +39,7 @@ class AddItemScreen(Screen):
                     unformat_date(date_entered) if date_entered else None,
                     category
                 )
-                # Clear fields
+
                 self.ids.name_input.text = ""
                 self.ids.quantity_input.text = ""
                 self.ids.expiration_input.text = ""

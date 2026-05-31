@@ -54,7 +54,7 @@ class TemplatesScreen(Screen):
             del_btn.bind(on_press=lambda _, tid=template_id: self.remove_template(tid))
             button_row.add_widget(del_btn)
 
-            add_all_btn = Button(text='Add All to List', size_hint_x=None, width=dp(120))  # slightly narrower
+            add_all_btn = Button(text='Add All to List', size_hint_x=None, width=dp(120))
             add_all_btn.bind(on_press=lambda _, tid=template_id: self.add_all_to_shopping_list(tid))
             button_row.add_widget(add_all_btn)
 
@@ -140,7 +140,7 @@ class TemplatesScreen(Screen):
     def add_all_to_shopping_list(self, template_id):
         items = fetch_items_by_template_id(template_id)
         for item in items:
-            insert_shopping_item(item, "")  # Empty quantity for now
+            insert_shopping_item(item, "")
         self.populate_templates()
 
     def add_single_item_to_list(self, item):
