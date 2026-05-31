@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-android:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -48,7 +48,7 @@ jobs:
 
       - name: Upgrade pip
         run: |
-          pip install --upgrade pip setuptools wheel
+          pip install --upgrade pip
 
       - name: Install Buildozer + stable toolchain
         run: |
@@ -58,6 +58,7 @@ jobs:
         run: |
           rm -rf .buildozer
           rm -rf ~/.buildozer
+          rm -rf ~/.cache/pip
 
       - name: Build APK
         run: |
