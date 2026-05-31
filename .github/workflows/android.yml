@@ -51,9 +51,10 @@ jobs:
           pip install cython==0.29.36
           pip install python-for-android==2024.1.21
 
-      - name: Clean Buildozer cache
+      - name: Clean caches
         run: |
-          rm -rf .buildozer ~/.buildozer
+          rm -rf .buildozer
+          rm -rf ~/.buildozer
 
       - name: Build APK
         run: |
